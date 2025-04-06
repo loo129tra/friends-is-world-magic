@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Три друга в мире магии</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* Светлая тема */
+    body.light-theme {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+
+    .neon-text {
+      font-size: 50px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+      animation: neon 1.5s ease-in-out infinite alternate;
+      margin-top: 20%;
+    }
+
+    body.light-theme .neon-text {
+      color: #000;
+      text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000;
+    }
+
+    @keyframes neon {
+      0% {
+        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+      }
+      100% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+      }
+    }
+
+    .btn {
+      font-size: 20px;
+      padding: 15px 40px;
+      margin-top: 50px;
+      background: linear-gradient(135deg, #ff00ff, #8a2be2);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
+
+    #story {
+      display: none;
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
+      animation: fadeIn 2s ease-out;
+      max-height: 60vh;
+      overflow-y: auto;
+      margin-left: 10%;
+      margin-right: 10%;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    body.light-theme #story {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Кнопка переключения темы */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    
+    .theme-toggle:hover {
+      background: #666;
+    }
+
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 600px) {
+      .neon-text {
+        font-size: 35px;
+      }
+      .btn {
+        font-size: 18px;
+        padding: 12px 30px;
+      }
+      #story {
+        max-height: 70vh;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Кнопка переключения темы -->
+  <button class="theme-toggle" onclick="toggleTheme()">Светлая тема</button>
+
+  <div class="neon-text">Три друга в мире магии</div>
+
+  <button class="btn" onclick="showStory()">Читать</button>
+
+  <div id="story">
+    <h2>Тайна Лунного Кристалла</h2>
+    <p>Тимофей стоял на вершине холма, его взгляд был устремлён в туманную даль. Вечернее небо уже темнело, и луна, как огромный серебристый кристалл, начинала подниматься из-за горизонта. В этот момент в воздухе вдруг появилась едва заметная искра — магия, которую Тимофей чувствовал с каждым своим вдохом. Он не знал, что именно происходит, но ощущал, что что-то важное вот-вот случится.</p>
+    <p>"Ты тоже это чувствуешь?" — послышался голос Риты. Она подошла к Тимофею, её чёрные волосы развевались на ветру, а глаза сияли загадочным светом.</p>
+    <p>"Да, похоже, мы не одни," — ответил Тимофей. — "Что-то не так с этим местом."</p>
+    <p>Рита кивнула и взяла его за руку. "Ваня сказал, что если Лунный Кристалл активируется, мы должны быть готовы.Это может быть как благословением, так и проклятием."</p>
+    <p>В этот момент из туманной мглы появился Ваня. Он был одет в длинный плащ с капюшоном, скрывавшим его лицо, но несмотря на это, глаза его горели магическим светом. Он был учеником древней школы магии, и его знания о магии были безграничны.</p>
+    <p>"Мы должны найти Кристалл раньше, чем другие. Если его не защитить, мир поглотит тьма," — сказал Ваня, его голос звучал серьёзно.</p>
+    <p>Тимофей и Рита обменялись взглядами. Они знали, что Ваня никогда не шутит, когда речь шла о магии.</p>
+    <p>"Готовы?" — спросил Ваня, вытягивая из кармана маленький амулет с древним символом.</p>
+    <p>Рита улыбнулась, хотя в её глазах читалась тревога. "Никогда не было сомнений."</p>
+    <p>Тимофей сжался в груди, но с решимостью ответил: "Мы с вами."</p>
+    <p>Три друга направились вглубь леса, где, по слухам, находился Лунный Кристалл. Это место было темным и таинственным, скрытым от глаз обычных людей. Но каждый из них знал, что их судьба связана с этим кристаллом. И что бы их ни ждало впереди, они были готовы.</p>
+  </div>
+
+  <script>
+    function showStory() {
+      document.getElementById('story').style.display = 'block';
+      document.querySelector('.btn').style.display = 'none';
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+      // Обновляем текст кнопки в зависимости от текущей темы
+      const btn = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('light-theme')) {
+        btn.textContent = 'Тёмная тема';
+      } else {
+        btn.textContent = 'Светлая тема';
+      }
+    }
+  </script>
+</body>
+</html>
